@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Laraschool | Login</title>
+  <title>SMP MUHAMMADIYAH 1 MERTOYUDAN | Login</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -17,7 +17,7 @@
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
     <div class="card-header text-center">
-      <a href="" class="h4"><b>LARASCHOOL</a>
+      <a href="" class="h4"><b>SMP MUHAMMADIYAH 1 MERTOYUDAN</a>
     </div>
     <div class="card-body">
       <p class="login-box-msg">Sign in to start your session</p>

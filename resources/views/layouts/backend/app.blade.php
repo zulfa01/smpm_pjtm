@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Laraschool - {{ $title ?? '' }}</title>
+  <title>SMP MUHAMMADIYAH 1 MERTOYUDAN - {{ $title ?? '' }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -57,7 +57,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; {{ date('Y') }} Rahmat Hidatyatullah.</strong>
+    <strong>Copyright &copy; {{ date('Y') }} smpm 1 mertoyudan.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
       Template By <a href="http://adminlte.io">AdminLTE.io</a>

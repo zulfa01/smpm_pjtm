@@ -4,7 +4,10 @@
         <nav class="classy-navbar justify-content-between" id="cleverNav">
 
             <!-- Logo -->
-            <a class="nav-brand" href="/"><img src="{{ asset('img/icons') }}/laravel.jpg" width="50" alt=""> LARASCHOOL</a>
+            <a class="nav-brand" href="/">
+                <img src="{{ asset('img/icons') }}/logo.jpg" width="50" alt="">
+                <span style="font-weight: bold;">SMP MUHAMMADIYAH 1 MERTOYUDAN</span>
+            </a>
 
             <!-- Navbar Toggler -->
             <div class="classy-navbar-toggler">

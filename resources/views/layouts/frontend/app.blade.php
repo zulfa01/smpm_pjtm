@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *Must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title -->
-    <title>Laraschool | {{ $title ?? '' }}</title>
+    <title>SMP MUHAMMADIYAH 1 MERTOYUDAN | {{ $title ?? '' }}</title>
 
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('templates/frontend/clever') }}/img/core-img/favicon.ico">
@@ -32,13 +32,16 @@
         <div class="top-header-area d-flex justify-content-between align-items-center">
             <!-- Contact Info -->
             <div class="contact-info">
-                <a href="#"><span>Phone:</span> +1 123 321 456 654</a>
-                <a href="#"><span>Email:</span> laraschool@example.com</a>
+                <a href="#"><span>Phone:</span> 0293325924</a>
+                <a href="#"><span>Email:</span> smp_muh_pujotomo@yahoo.com</a>
             </div>
             <!-- Follow Us -->
             <div class="follow-us">
                 <span>Follow us</span>
                 <a href=""><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href=""><i class="fa fa-youtube" aria-hidden="true"></i></a>
+
             </div>
         </div>
 

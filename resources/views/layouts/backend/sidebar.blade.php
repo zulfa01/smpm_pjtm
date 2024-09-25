@@ -2,22 +2,23 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="/" class="brand-link">
-    <img src="{{ asset('img/icons') }}/laravel.jpg" alt="laravel Logo" class="brand-image img-circle elevation-3"
-         style="opacity: .8">
-    <span class="brand-text font-weight-light">Laraschool</span>
+    <img src="{{ asset('img/icons') }}/logo.jpg" alt="laravel Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-bold" style="font-size: 10px;">SMP MUHAMMADIYAH 1 MERTOYUDAN</span>
   </a>
 
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
-    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-      <div class="image">
-        <img src="{{ asset('img/icons') }}/codeigniter4.png" class="img-circle elevation-2" alt="User Image">
-      </div>
-      <div class="info">
-        <a href="#" class="d-block">{{ auth()->user()->name }}</a>
-      </div>
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
+    <div class="image">
+        <i class="fas fa-user-circle" style="font-size: 30px;"></i> <!-- Reduced size -->
     </div>
+    <div class="info text-center" style="flex-grow: 1; text-align: center;">
+        <a href="#" class="d-block" style="font-size: 14px;">{{ auth()->user()->name }}</a> <!-- Adjust font size as needed -->
+    </div>
+</div>
+
+
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -30,12 +31,12 @@
             </p>
           </a>
         </li>
-        <li class="nav-header">MANAGE DATA</li>
+        <li class="nav-header">KELOLA DATA</li>
         <li class="nav-item">
           <a href="{{ route('admin.users.index') }}" class="nav-link {{ Request::segment(2) == 'users' ? 'active' : '' }}">
             <i class="nav-icon fas fa-users"></i>
             <p>
-              Users
+              Pengguna
             </p>
           </a>
         </li>

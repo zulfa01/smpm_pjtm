@@ -2,7 +2,7 @@
 	'title' => 'Detail Pengumuman',
 ])
 @section('content')
-<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{ asset('img/bg/pengumuman.png') }});">
+<div class="clever-catagory blog-details bg-img d-flex align-items-center justify-content-center p-3 height-400" style="background-image: url({{asset('img/bg/pengumuman.png') }});">
     <div class="blog-details-headline">
         <h3>{{ $pengumuman->judul }}</h3>
     </div>

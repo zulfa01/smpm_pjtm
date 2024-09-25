@@ -1,17 +1,13 @@
-@extends('layouts.frontend.app',[
+@extends('layouts.frontend.app', [
     'title' => 'Home',
 ])
 @section('content')
 <!-- ##### Hero Area Start ##### -->
-<section class="hero-area bg-img bg-overlay-2by5" style="background-image: url({{ asset('img/bg') }}/bg1.jpg);">
-    <div class="container h-100">
+<section class="hero-area bg-img bg-overlay-2by5" style="background-image: url({{asset('img/bg') }}/bg1.jpg);">
+    <div class="container h-150">
         <div class="row h-100 align-items-center">
             <div class="col-12">
                 <!-- Hero Content -->
-                <div class="hero-content text-center">
-                    <h2>Selamat Datang di Laraschool</h2>
-                    <a href="#" class="btn clever-btn">Sekolah Elit</a>
-                </div>
             </div>
         </div>
     </div>
@@ -21,16 +17,45 @@
 <div class="regular-page-area section-padding-100 mt-5 mb-4">
     <div class="col-lg-9 mx-auto">
         <div class="card">
-            <div class="card-header">Laraschool</div>
+            <div class="card-header">Selamat Datang</div>
             <div class="card-body">
-                <p class="lead">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p class="lead" style="text-align: justify;">
+                  SMP Muhammadiyah 1 Mertoyudan merupakan salah satu dari sekian SMP yang ada di kabupaten Magelang. SMP Muhammadiyah 1 Mertoyudan berdiri sejak 1 Februari 1976, saat ini SMP Muhammadiyah 1 Mertoyudan dipimpin oleh Bapak Agus Haryanto, S.Pd. SMP Muhammadiyah 1 Mertoyudan beralamat di Jl. Santan, Glagak, Sumberrejo, Kec. Mertoyudan, Kab. Magelang.
                 </p>
+            </div>
+        </div>
+
+        <!-- Visi, Misi, dan Tujuan dalam 3 kotak -->
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header">Visi</div>
+                    <div class="card-body">
+                        <p style="text-align: justify;">SMP Muhammadiyah 1 Mertoyudan menjadi sekolah unggulan yang berlandaskan nilai-nilai Islam dan berorientasi pada pengembangan karakter siswa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header">Misi</div>
+                    <div class="card-body">
+                        <ul style="text-align: justify;">
+                            <li>Menyelenggarakan pendidikan yang berkualitas dan berkarakter.</li>
+                            <li>Mengembangkan potensi siswa melalui berbagai program akademik dan non-akademik.</li>
+                            <li>Menanamkan nilai-nilai keislaman dalam setiap aspek pendidikan.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card h-100">
+                    <div class="card-header">Tujuan</div>
+                    <div class="card-body">
+                        <p style="text-align: justify;">Menyiapkan siswa yang cerdas, berakhlak mulia, dan siap berkontribusi positif bagi masyarakat.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -84,14 +109,12 @@
         </div>
 
         <div class="row">
-            
             @foreach($artikel as $art)
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
                             {{ $art->judul }}
-
-                            <span class="badge badge-danger float-right">Author : {{ $art->user->name }}</span>
+                            <span class="badge badge-danger float-right">Penulis : {{ $art->user->name }}</span>
                         </div>
                         <div class="card-body">
                             <img src="{{ asset($art->getThumbnail()) }}" width="100%" style="height: 300px; object-fit: cover; object-position: center;">
