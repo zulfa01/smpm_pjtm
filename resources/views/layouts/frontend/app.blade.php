@@ -41,7 +41,6 @@
                 <a href="https://www.facebook.com/yourpage" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                 <a href="https://www.instagram.com/smpm_1_mertoyudan?igsh=MW41NmJjOHhiZXZuMA==" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 <a href="https://youtube.com/@smpmuhammadiyahpujotomomer411?si=YP4tWE4PdUywWFGW" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                <a href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
             </div>
         </div>
 

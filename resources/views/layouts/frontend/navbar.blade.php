@@ -30,7 +30,6 @@
                         <li><a href="{{ route('contact') }}" class="{{ Request::is('contact') ? 'text-primary' : '' }}">Kontak</a></li>
                         <li><a href="{{ route('artikel') }}" class="{{ Request::segment(1) == 'artikel' ? 'text-primary' : '' }}">Artikel</a></li>
                         <li><a href="{{ route('pengumuman') }}" class="{{ Request::segment(1) == 'pengumuman' ? 'text-primary' : '' }}">Pengumuman</a></li>
-                        <li><a href="" class="{{ Request::is('agenda') ? 'text-primary' : '' }}">Agenda</a></li>
                     </ul>
 
                     <!-- Search Button -->
@@ -40,6 +39,7 @@
                             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                         </form>
                     </div>
+                    <a href="{{ route('login') }}"><i class="fa fa-sign-in" aria-hidden="true"></i></a>
 
                     @auth
                     <div class="login-state d-flex align-items-center">
