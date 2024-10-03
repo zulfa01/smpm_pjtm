@@ -59,9 +59,6 @@
   <footer class="main-footer">
     <strong>Copyright &copy; {{ date('Y') }} smpm 1 mertoyudan.</strong>
     All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
-      Template By <a href="http://adminlte.io">AdminLTE.io</a>
-    </div>
   </footer>
 
 </div>
