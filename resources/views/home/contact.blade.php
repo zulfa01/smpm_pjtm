@@ -33,14 +33,14 @@
             <div class="col-12 col-lg-6">
                 <div class="contact--info mt-50 mb-50">
                     <h4>Tulis Pesan</h4>
-                    <form method="POST" action="">
+                    <form method="POST" action="{{ route('contact.send-messages') }}">
                         <div class="row">
                             <div class="col-12 col-lg-6">
                                 <div class="form-group">
                                     <input type="text" class="form-control" name="nama" id="text" placeholder="Nama">
                                     @error('nama')
                                         <div class="invalid-feedback">
-                                            {{ $message }}
+                                            {{ $messages }}
                                         </div>
                                     @enderror
                                 </div>
@@ -50,7 +50,7 @@
                                     <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                                     @error('email')
                                         <div class="invalid-feedback">
-                                            {{ $message }}
+                                            {{ $messages }}
                                         </div>
                                     @enderror
                                 </div>
@@ -61,7 +61,7 @@
                                     <small id="emailHelp" class="form-text text-muted">Maksimal kirim 5 kali dengan email yang sama</small>
                                     @error('isi')
                                         <div class="invalid-feedback">
-                                            {{ $message }}
+                                            {{ $messages }}
                                         </div>
                                     @enderror
                                 </div>

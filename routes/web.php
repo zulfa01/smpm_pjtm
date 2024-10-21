@@ -7,6 +7,9 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ProfileController;
 use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\UsersController;
+use App\Http\Controllers\Admin\DataGuruController;
+use App\Http\Controllers\Admin\GaleriController;
+use App\Http\Controllers\Admin\MessageController;
 
 
 //Controllers Namespace
@@ -14,6 +17,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\PengumumanController;
+use App\Http\Controllers\DataGuruController as PublicDataGuruController;
+use App\Http\Controllers\GaleriController as PublicGaleriController;
+use App\Http\Controllers\MessageController as PublicMessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -42,6 +48,17 @@ Route::get('/artikel/{artikel:slug}',[ArtikelController::class,'show'])->name('a
 Route::get('/pengumuman',[PengumumanController::class,'index'])->name('pengumuman');
 Route::get('/pengumuman/{pengumuman:slug}',[PengumumanController::class,'show'])->name('pengumuman.show');
 
+// Data Guru (Public)
+Route::get('data_guru', [PublicDataGuruController::class, 'index'])->name('data-guru.index');
+Route::get('data_guru/{id}', [PublicDataGuruController::class, 'show'])->name('data-guru.show');
+
+// Galeri (Public)
+Route::get('/galeri', [PublicGaleriController::class, 'index'])->name('galeri.index');
+Route::get('/galeri/{id}', [PublicGaleriController::class, 'show'])->name('galeri.show');
+
+// Rute untuk mengirim pesan (public)
+Route::post('/contact/send-messages', [MessageController::class, 'send'])->name('contact.send-messages');
+
 //Admin
 Route::group(['namespace' => 'Admin','prefix' => 'admin','middleware' => ['auth']],function(){
 	Route::name('admin.')->group(function(){
@@ -56,5 +73,8 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin','middleware' => ['auth'
 		Route::resource('agenda','AgendaController');
 		Route::resource('artikel','ArtikelController');
 		Route::resource('kategori-artikel','KategoriArtikelController');
+		Route::resource('data_guru', 'DataGuruController');
+		Route::resource('galeri', 'GaleriController');
+		Route::resource('messages', 'MessageController');
 	});
 });

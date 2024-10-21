@@ -9,7 +9,7 @@ use App\Services\SummernoteService;
 use App\Services\UploadService;
 use App\Models\Artikel;
 use App\Models\KategoriArtikel;
-use Str;
+use Illuminate\Support\Str;
 use File;
 
 class ArtikelController extends Controller

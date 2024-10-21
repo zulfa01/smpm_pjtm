@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Models\Agenda;
 use App\Models\Artikel;
+use App\Models\DataGuru;
 use App\Models\Pengumuman;
+use App\Models\Galeri;
 
 class HomeController extends Controller
 {
@@ -16,6 +18,8 @@ class HomeController extends Controller
             'agenda' => Agenda::latest()->take(2)->get(),
             'artikel' => Artikel::with(['user','kategoriArtikel'])->latest()->take(2)->get(),
             'pengumuman' => Pengumuman::with(['user'])->latest()->take(2)->get(),
+            'data_guru' => DataGuru::with(['user'])->latest()->take(2)->get(),
+            'galeri' => Galeri::with(['user'])->latest()->take(2)->get(),
         ]);
     }
 

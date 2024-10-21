@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>SMP MUHAMMADIYAH 1 MERTOYUDAN - {{ $title ?? '' }}</title>
+  <title>SMP MUHAMMADIYAH PUJOTOMO - {{ $title ?? '' }}</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -57,7 +57,7 @@
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; {{ date('Y') }} smpm 1 mertoyudan.</strong>
+    <strong>Copyright &copy; {{ date('Y') }} Smp M Pujotomo.</strong>
     All rights reserved.
   </footer>
 

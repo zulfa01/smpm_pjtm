@@ -6,7 +6,7 @@
             <!-- Logo -->
             <a class="nav-brand" href="/">
                 <img src="{{ asset('img/icons') }}/logo.jpg" width="50" alt="">
-                <span style="font-weight: bold;">SMP MUHAMMADIYAH 1 MERTOYUDAN</span>
+                <span style="font-weight: bold;">SMP MUHAMMADIYAH PUJOTOMO</span>
             </a>
 
             <!-- Navbar Toggler -->
@@ -30,6 +30,8 @@
                         <li><a href="{{ route('contact') }}" class="{{ Request::is('contact') ? 'text-primary' : '' }}">Kontak</a></li>
                         <li><a href="{{ route('artikel') }}" class="{{ Request::segment(1) == 'artikel' ? 'text-primary' : '' }}">Artikel</a></li>
                         <li><a href="{{ route('pengumuman') }}" class="{{ Request::segment(1) == 'pengumuman' ? 'text-primary' : '' }}">Pengumuman</a></li>
+                        <li><a href="{{ route('data-guru.index') }}" class="{{ Request::segment(1) == 'data_guru' ? 'text-primary' : '' }}">Data Guru</a></li>
+                        <li><a href="{{ route('galeri.index') }}" class="{{ Request::segment(1) == 'galeri' ? 'text-primary' : '' }}">Galeri</a></li>
                     </ul>
 
                     <!-- Search Button -->

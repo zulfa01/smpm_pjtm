@@ -21,7 +21,7 @@
             </div>
             <div class="card-body">
                 <p class="lead text-justify">
-                    SMP Muhammadiyah 1 Mertoyudan, yang sebelumnya dikenal sebagai SMP Muhammadiyah Pujotomo, memiliki sejarah yang kaya dan berkontribusi besar dalam pendidikan di wilayah Magelang. Sekolah ini didirikan sebagai bagian dari upaya Muhammadiyah untuk memberikan pendidikan yang berkualitas dan berlandaskan nilai-nilai Islam.
+                    SMP Muhammadiyah Pujotomo memiliki sejarah yang kaya dan berkontribusi besar dalam pendidikan di wilayah Magelang. Sekolah ini didirikan sebagai bagian dari upaya Muhammadiyah untuk memberikan pendidikan yang berkualitas dan berlandaskan nilai-nilai Islam.
                     Sejak awal berdirinya, SMP Muhammadiyah 1 Mertoyudan telah berfokus pada pembentukan karakter siswa, dengan menekankan pendidikan moral, akhlak, dan keagamaan. Sekolah ini berusaha untuk menciptakan lingkungan belajar yang kondusif, di mana siswa dapat berkembang secara akademis dan spiritual.
                     Dalam perjalanannya, SMP Muhammadiyah 1 Mertoyudan telah mengalami berbagai perkembangan, baik dari segi kurikulum maupun fasilitas. Dengan dukungan dari komunitas dan orang tua, sekolah ini terus berupaya untuk meningkatkan kualitas pendidikan, menghadirkan program-program inovatif, serta menjalin kerjasama dengan berbagai pihak.
                     Saat ini, SMP Muhammadiyah 1 Mertoyudan dikenal sebagai salah satu sekolah unggulan di wilayah Mertoyudan dan sekitarnya, dengan komitmen untuk mencetak generasi yang berakhlak mulia, berilmu, dan siap menghadapi tantangan zaman.
@@ -38,7 +38,7 @@
                 <div class="card h-100 text-center shadow-sm">
                     <div class="card-header bg-primary text-white">Visi</div>
                     <div class="card-body">
-                        <p class="text-justify">SMP Muhammadiyah 1 Mertoyudan menjadi sekolah unggulan yang berlandaskan nilai-nilai Islam dan berorientasi pada pengembangan karakter siswa.</p>
+                        <p class="text-justify">SMP Muhammadiyah Pujotomo menjadi sekolah unggulan yang berlandaskan nilai-nilai Islam dan berorientasi pada pengembangan karakter siswa.</p>
                     </div>
                 </div>
             </div>

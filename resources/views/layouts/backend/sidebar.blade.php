@@ -3,22 +3,20 @@
   <!-- Brand Logo -->
   <a href="/" class="brand-link">
     <img src="{{ asset('img/icons') }}/logo.jpg" alt="laravel Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-bold" style="font-size: 10px;">SMP MUHAMMADIYAH 1 MERTOYUDAN</span>
+    <span class="brand-text font-bold" style="font-size: 10px;">SMP MUHAMMADIYAH PUJOTOMO</span>
   </a>
 
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
-    <div class="image">
+      <div class="image">
         <i class="fas fa-user-circle" style="font-size: 30px;"></i> <!-- Reduced size -->
-    </div>
-    <div class="info text-center" style="flex-grow: 1; text-align: center;">
+      </div>
+      <div class="info text-center" style="flex-grow: 1; text-align: center;">
         <a href="#" class="d-block" style="font-size: 14px;">{{ auth()->user()->name }}</a> <!-- Adjust font size as needed -->
+      </div>
     </div>
-</div>
-
-
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
@@ -72,6 +70,35 @@
             </p>
           </a>
         </li>
+
+        <!-- Menu Data Guru -->
+        <li class="nav-item">
+          <a href="{{ route('admin.data_guru.index') }}" class="nav-link {{ Request::segment(2) == 'data_guru' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-chalkboard-teacher"></i>
+            <p>
+              Data Guru
+            </p>
+          </a>
+        </li>
+
+        <!-- Menu Galeri -->
+        <li class="nav-item">
+          <a href="{{ route('admin.galeri.index') }}" class="nav-link {{ Request::segment(2) == 'galeri' ? 'active' : '' }}">
+            <i class="nav-icon far fa-image"></i>
+            <p>
+              Galeri
+            </p>
+          </a>
+        </li>
+
+        <!-- Menu message -->
+        <li class="nav-item">
+          <a href="{{ route('admin.messages.index') }}" class="nav-link {{ Request::segment(2) == 'messages' ? 'active' : '' }}">
+              <i class="nav-icon fas fa-comments"></i>
+              <p>Pesan</p>
+          </a>
+      </li>
+      
 
         <li class="nav-header">PENGATURAN</li>
         <li class="nav-item">

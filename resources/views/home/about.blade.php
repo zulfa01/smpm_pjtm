@@ -16,7 +16,7 @@
                         </div>
                         <div class="card-body">
                             <p class="text-justify">
-                                SMP Muhammadiyah 1 Mertoyudan adalah sekolah menengah pertama yang berkomitmen untuk memberikan pendidikan berkualitas dengan landasan nilai-nilai Islam dan keunggulan akademik. Dengan program-program pendidikan yang terintegrasi, kami mengutamakan pembinaan karakter, penanaman nilai-nilai keislaman, dan peningkatan keterampilan siswa melalui berbagai kegiatan akademik, non-akademik, serta ekstrakurikuler yang beragam.
+                                SMP Muhammadiyah Pujotomo adalah sekolah menengah pertama yang berkomitmen untuk memberikan pendidikan berkualitas dengan landasan nilai-nilai Islam dan keunggulan akademik. Dengan program-program pendidikan yang terintegrasi, kami mengutamakan pembinaan karakter, penanaman nilai-nilai keislaman, dan peningkatan keterampilan siswa melalui berbagai kegiatan akademik, non-akademik, serta ekstrakurikuler yang beragam.
                             </p>
                             <p class="text-justify">
                                 Kami siap mendidik siswa-siswi menjadi pribadi yang berprestasi dan berakhlak mulia, berkontribusi positif untuk masyarakat, bangsa, dan agama.
