@@ -11,7 +11,7 @@ class DataGuruController extends Controller
     // Tampilkan semua data guru di halaman admin dengan pagination
     public function index()
     {
-        $data_guru = DataGuru::latest()->paginate(10);
+        $data_guru = DataGuru::orderBy('id', 'asc')->paginate(10); // Sesuaikan jumlah data per halaman
         return view('admin.data_guru.index', compact('data_guru'));
     }
 
@@ -88,5 +88,14 @@ public function update(Request $request, $id)
         $data_guru->delete();
 
         return redirect()->route('admin.data_guru.index')->with('success', 'Data guru berhasil dihapus!');
+    }
+
+    public function edit($id)
+    {
+        // Ambil data guru berdasarkan ID
+        $dataGuru = DataGuru::findOrFail($id);
+
+        // Kembalikan tampilan edit dengan data guru
+        return view('admin.data_guru.edit', compact('dataGuru'));
     }
 }

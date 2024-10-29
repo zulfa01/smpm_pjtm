@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Pengumuman;
-use Str;
+use Illuminate\Support\Str;
 
 class PengumumanController extends Controller
 {

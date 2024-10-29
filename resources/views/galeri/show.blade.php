@@ -4,15 +4,16 @@
 
 @section('content')
 <div class="container mt-5">
-    <h2 class="mb-4">{{ $galeri->judul }}</h2>
-    
-    <div class="card">
+    <div class="card shadow-sm rounded border-0">
         <div class="card-body">
-            <h5 class="card-title">Detail Galeri</h5>
-            <p class="card-text"><strong>Deskripsi:</strong> {{ $galeri->deskripsi }}</p>
-            
             <div class="text-center">
-                <img src="{{ asset('uploads/galeri/' . $galeri->foto) }}" alt="{{ $galeri->judul }}" class="img-fluid" style="max-width: 300px; height: auto;">
+                <h2 class="mb-3">{{ $galeri->judul }}</h2>
+                <img src="{{ asset('uploads/galeri/' . $galeri->foto) }}" alt="{{ $galeri->judul }}" class="img-fluid" style="max-width: 300px; height: auto; object-fit: cover;">
+            </div>
+            <h5 class="card-title text-center mt-3">Detail Galeri</h5>
+            <div class="card-text text-center">
+                <p><strong>Tanggal:</strong> {{ $galeri->tanggal }}</p>
+                <p><strong>Keterangan:</strong> {{ $galeri->keterangan }}</p>
             </div>
             
             <div class="text-center mt-4">

@@ -35,7 +35,7 @@
                   <td>{{ $no++ }}</td>
                   <td>{{ $art->judul }}</td>
                   <td>{{ $art->user->name }}</td>
-                  <td>{{ $art->kategoriArtikel->nama_kategori }}</td>
+                  <td>{{ optional($art->kategoriArtikel)->nama_kategori }}</td> <!-- Perbaikan di sini -->
                   
                   <td>
                     @if(auth()->user()->id == $art->user_id)

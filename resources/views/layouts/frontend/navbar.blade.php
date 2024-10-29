@@ -5,7 +5,7 @@
 
             <!-- Logo -->
             <a class="nav-brand" href="/">
-                <img src="{{ asset('img/icons') }}/logo.jpg" width="50" alt="">
+                <img src="{{ asset('img/icons') }}/Screenshot_2024-10-21_203442-removebg-preview.png" width="50" alt="">
                 <span style="font-weight: bold;">SMP MUHAMMADIYAH PUJOTOMO</span>
             </a>
 
@@ -26,11 +26,11 @@
                 <div class="classynav">
                     <ul>
                         <li><a href="/" class="{{ Request::is('/') || Request::is('home') ? 'text-primary' : '' }}">Home</a></li>
-                        <li><a href="{{ route('about') }}" class="{{ Request::is('about') ? 'text-primary' : '' }}">Tentang</a></li>
+                        <li><a href="{{ route('about') }}" class="{{ Request::is('about') ? 'text-primary' : '' }}">Informasi</a></li>
                         <li><a href="{{ route('contact') }}" class="{{ Request::is('contact') ? 'text-primary' : '' }}">Kontak</a></li>
                         <li><a href="{{ route('artikel') }}" class="{{ Request::segment(1) == 'artikel' ? 'text-primary' : '' }}">Artikel</a></li>
                         <li><a href="{{ route('pengumuman') }}" class="{{ Request::segment(1) == 'pengumuman' ? 'text-primary' : '' }}">Pengumuman</a></li>
-                        <li><a href="{{ route('data-guru.index') }}" class="{{ Request::segment(1) == 'data_guru' ? 'text-primary' : '' }}">Data Guru</a></li>
+                        <li><a href="{{ route('data-guru.index') }}" class="{{ Request::segment(1) == 'data_guru' ? 'text-primary' : '' }}">Guru & Staff</a></li>
                         <li><a href="{{ route('galeri.index') }}" class="{{ Request::segment(1) == 'galeri' ? 'text-primary' : '' }}">Galeri</a></li>
                     </ul>
 

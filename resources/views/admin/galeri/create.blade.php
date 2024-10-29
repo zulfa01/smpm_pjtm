@@ -1,6 +1,6 @@
 @extends('layouts.backend.app', [
-    'title' => 'Tambah Data Galeri',
-    'contentTitle' => 'Tambah Data Galeri'
+    'title' => 'Tambah Galeri',
+    'contentTitle' => 'Tambah Galeri'
 ])
 
 @push('css')
@@ -15,33 +15,29 @@
             <h4 class="card-title">Tambah Galeri</h4>
         </div>
         <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            
             <form method="POST" enctype="multipart/form-data" action="{{ route('admin.galeri.store') }}">
                 @csrf
                 <div class="form-group">
                     <label for="judul">Judul Galeri</label>
-                    <input required="" type="text" name="judul" placeholder="Masukkan judul galeri" class="form-control" value="{{ old('judul') }}"> 
-                    @error('judul')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
-                </div>
-                <div class="form-group">
-                    <label for="deskripsi">Deskripsi Galeri</label>
-                    <textarea required="" name="deskripsi" placeholder="Masukkan deskripsi galeri" class="form-control">{{ old('deskripsi') }}</textarea>
-                    @error('deskripsi')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                    <input required type="text" name="judul" placeholder="Masukkan judul galeri" class="form-control"> 
                 </div>
                 <div class="form-group">
                     <label>Foto</label>
-                    <input type="file" name="thumbnail" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
-                    @error('thumbnail')
-                        <div class="text-danger">{{ $message }}</div>
-                    @enderror
+                    <input type="file" name="foto" class="dropify form-control" data-height="190" data-allowed-file-extensions="png jpg gif jpeg svg webp jfif" required>
                 </div>
-            </div>
-            <div class="card-footer">
-                <button type="submit" class="btn btn-primary">UPLOAD</button>
-            </div>
+                <div class="card-footer">
+                    <button type="submit" class="btn btn-primary">UPLOAD</button>
+                </div>
             </form>
         </div>
     </div>

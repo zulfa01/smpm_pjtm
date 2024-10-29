@@ -7,36 +7,35 @@
 <section class="upcoming-events section-padding-100-0 mb-5">
     <div class="container">
         <div class="row">
-            <div class="col-12">
-                <div class="section-heading">
-                    <h3>List Data Guru</h3>
+            <div class="col-12 text-center">
+                <div class="section-heading mb-5">
+                    <h3 class="text-primary">Guru & Staff</h3>
                 </div>
             </div>
         </div>
 
         <div class="row">
             @foreach($data_guru as $guru)
-            <div class="col-12 col-md-6 col-lg-6">
-                <div class="single-upcoming-events mb-50 wow fadeInUp" data-wow-delay="250ms">
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="single-upcoming-events wow fadeInUp" data-wow-delay="250ms" style="border: 1px solid #eaeaea; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
                     <div class="events-thumb">
-                        <img src="{{ asset('uploads/guru/' . $guru->foto) }}" alt="{{ $guru->nama }}">
-                        <h6 class="event-date">Jabatan: {{ $guru->jabatan }}</h6>
-                        <h4 class="event-title">{{ $guru->nama }}</h4>
+                        <img src="{{ asset('uploads/guru/' . $guru->foto) }}" alt="{{ $guru->nama }}" style="width: 100%; height: auto; max-height: 300px; object-fit: contain;">
                     </div>
-                    <div>
-                        <a href="{{ route('data-guru.show', $guru->id) }}" class="btn btn-primary col-lg">Detail</a>
+                    <div class="p-3 text-center">
+                        <h6 class="event-date text-muted">{{ $guru->jabatan }}</h6>
+                        <h4 class="event-title text-truncate" style="font-weight: bold;">{{ $guru->nama }}</h4>
                     </div>
                 </div>
             </div>
             @endforeach
+        </div>
 
-            <div class="pagination justify-content-center">
-                {{ $data_guru->links() }}
-            </div>
+        <div class="pagination justify-content-center">
+            {{ $data_guru->links() }}
         </div>
     </div>
 </section>
 @else
-<div class="alert alert-warning">Data tidak ditemukan.</div>
+<div class="alert alert-warning text-center">Data tidak ditemukan.</div>
 @endif
 @stop

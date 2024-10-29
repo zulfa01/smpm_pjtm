@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="/" class="brand-link">
-    <img src="{{ asset('img/icons') }}/logo.jpg" alt="laravel Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <img src="{{ asset('img/icons') }}/Screenshot_2024-10-21_203442-removebg-preview.png" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
     <span class="brand-text font-bold" style="font-size: 10px;">SMP MUHAMMADIYAH PUJOTOMO</span>
   </a>
 
@@ -79,26 +79,17 @@
               Data Guru
             </p>
           </a>
-        </li>
+        </li> 
 
-        <!-- Menu Galeri -->
+        <!-- Menu Galeri (ditambahkan) -->
         <li class="nav-item">
           <a href="{{ route('admin.galeri.index') }}" class="nav-link {{ Request::segment(2) == 'galeri' ? 'active' : '' }}">
-            <i class="nav-icon far fa-image"></i>
+            <i class="nav-icon fas fa-images"></i>
             <p>
               Galeri
             </p>
           </a>
         </li>
-
-        <!-- Menu message -->
-        <li class="nav-item">
-          <a href="{{ route('admin.messages.index') }}" class="nav-link {{ Request::segment(2) == 'messages' ? 'active' : '' }}">
-              <i class="nav-icon fas fa-comments"></i>
-              <p>Pesan</p>
-          </a>
-      </li>
-      
 
         <li class="nav-header">PENGATURAN</li>
         <li class="nav-item">

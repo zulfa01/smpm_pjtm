@@ -4,96 +4,111 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Galeri;
-use Illuminate\Support\Str; // Perbaiki penulisan Illuminate
+use App\Models\Galeri; // Pastikan Anda mengimpor model Galeri
+use Illuminate\Support\Facades\File; // Impor Facade File untuk menghapus file
 
 class GaleriController extends Controller
 {
     // Tampilkan semua data galeri di halaman admin dengan pagination
     public function index()
     {
-        $galeri = Galeri::latest()->paginate(10); // Mengambil data galeri terbaru dengan pagination
-        return view('admin.galeri.index', compact('galeri'));
+        $galeri = Galeri::orderBy('created_at', 'desc')->paginate(10); // Menggunakan created_at untuk pengurutan
+        return view('admin.galeri.index', compact('galeri')); 
     }
 
     // Tampilkan halaman detail untuk galeri tertentu
     public function show($id)
     {
-        $galeri = Galeri::findOrFail($id); // Ambil galeri berdasarkan ID
-        return view('admin.galeri.show', compact('galeri')); // Tampilkan detail galeri
+        $galeri = Galeri::findOrFail($id);
+        return view('admin.galeri.show', compact('galeri'));
     }
 
     // Tampilkan form untuk menambah data galeri
     public function create()
     {
-        return view('admin.galeri.create'); // Tampilkan form untuk menambah galeri
+        return view('admin.galeri.create');
     }
 
     // Simpan data galeri baru ke database
     public function store(Request $request)
     {
+        // Validasi hanya untuk judul dan foto
         $request->validate([
             'judul' => 'required|string|max:255',
-            'deskripsi' => 'nullable|string',
-            'thumbnail' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            'foto' => 'required|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        // Proses upload file
-        $fileName = time() . '.' . $request->thumbnail->extension(); // Buat nama file
-        $request->thumbnail->move(public_path('uploads/galeri'), $fileName); // Pindahkan ke folder uploads
+        // Menggunakan time() untuk memastikan nama file unik
+        $fileName = time() . '.' . $request->foto->extension();
+        $request->foto->move(public_path('uploads/galeri'), $fileName);
 
-        // Simpan data galeri ke database, hanya path dari thumbnail
+        // Buat data galeri baru
         Galeri::create([
             'judul' => $request->judul,
-            'deskripsi' => $request->deskripsi,
-            'thumbnail' => $fileName, // Simpan nama file thumbnail saja
-            'slug' => Str::slug($request->judul),
+            'foto' => $fileName,
         ]);
 
-        return redirect()->route('admin.galeri.index')->with('success', 'Data galeri berhasil ditambahkan!');
-    }
-
-    // Tampilkan form untuk mengedit data galeri
-    public function edit($id)
-    {
-        $galeri = Galeri::findOrFail($id); // Ambil galeri berdasarkan ID
-        return view('admin.galeri.edit', compact('galeri')); // Tampilkan form edit
+        return redirect()->route('admin.galeri.index')->with('success', 'Galeri berhasil ditambahkan.');
     }
 
     // Update data galeri di database
     public function update(Request $request, $id)
     {
         $request->validate([
-            'judul' => 'required|string|max:255', // Validasi judul
-            'deskripsi' => 'nullable|string', // Validasi deskripsi
-            'thumbnail' => 'nullable|image|mimes:jpeg,png,jpg|max:2048', // Validasi thumbnail
+            'judul' => 'required|string|max:255',
+            'foto' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
-        $galeri = Galeri::findOrFail($id); // Ambil galeri berdasarkan ID
+        // Ambil data galeri berdasarkan ID
+        $galeri = Galeri::findOrFail($id);
 
-        // Jika ada file thumbnail baru yang diupload
-        if ($request->hasFile('thumbnail')) {
-            $fileName = time() . '.' . $request->thumbnail->extension(); // Buat nama file thumbnail baru
-            $request->thumbnail->move(public_path('uploads/galeri'), $fileName); // Pindahkan file ke folder uploads
-            $galeri->thumbnail = $fileName; // Update nama file thumbnail
+        // Jika ada file foto baru, proses upload
+        if ($request->hasFile('foto')) {
+            // Hapus foto lama jika ada
+            if ($galeri->foto) {
+                // Hapus foto dari server
+                File::delete(public_path('uploads/galeri/' . $galeri->foto));
+            }
+
+            // Simpan foto baru
+            $fileName = time() . '.' . $request->foto->extension();
+            $request->foto->move(public_path('uploads/galeri'), $fileName);
+            $galeri->foto = $fileName; // Update nama file foto
         }
 
         // Update data galeri
         $galeri->update([
-            'judul' => $request->judul, // Update judul
-            'deskripsi' => $request->deskripsi, // Update deskripsi
-            'slug' => Str::slug($request->judul), // Update slug
+            'judul' => $request->judul,
+            // Pastikan keterangan didefinisikan jika ada di database
+            'keterangan' => $request->input('keterangan'), 
         ]);
 
-        return redirect()->route('admin.galeri.index')->with('success', 'Data galeri berhasil diperbarui!'); // Redirect setelah berhasil
+        return redirect()->route('admin.galeri.index')->with('success', 'Data galeri berhasil diperbarui!');
     }
 
     // Hapus data galeri
     public function destroy($id)
     {
-        $galeri = Galeri::findOrFail($id); // Ambil galeri berdasarkan ID
-        $galeri->delete(); // Hapus galeri
+        $galeri = Galeri::findOrFail($id);
 
-        return redirect()->route('admin.galeri.index')->with('success', 'Data galeri berhasil dihapus!'); // Redirect setelah berhasil
+        // Hapus foto dari server jika ada
+        if ($galeri->foto) {
+            File::delete(public_path('uploads/galeri/' . $galeri->foto));
+        }
+
+        // Hapus data galeri dari database
+        $galeri->delete();
+
+        return redirect()->route('admin.galeri.index')->with('success', 'Data galeri berhasil dihapus!');
+    }
+
+    // Tampilkan form untuk mengedit data galeri
+    public function edit($id)
+    {
+        // Ambil data galeri berdasarkan ID
+        $galeri = Galeri::findOrFail($id);
+
+        // Kembalikan tampilan edit dengan data galeri
+        return view('admin.galeri.edit', compact('galeri'));
     }
 }

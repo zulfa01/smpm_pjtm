@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Pesan; // Pastikan Anda mengimpor model Pesan
 use Illuminate\Support\Facades\Route;
 
 //Admin Namespace
@@ -9,7 +10,6 @@ use App\Http\Controllers\Admin\ChangePasswordController;
 use App\Http\Controllers\Admin\UsersController;
 use App\Http\Controllers\Admin\DataGuruController;
 use App\Http\Controllers\Admin\GaleriController;
-use App\Http\Controllers\Admin\MessageController;
 
 
 //Controllers Namespace
@@ -18,8 +18,7 @@ use App\Http\Controllers\AgendaController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\PengumumanController;
 use App\Http\Controllers\DataGuruController as PublicDataGuruController;
-use App\Http\Controllers\GaleriController as PublicGaleriController;
-use App\Http\Controllers\MessageController as PublicMessageController;
+use App\Http\Controllers\PublicGaleriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -53,11 +52,11 @@ Route::get('data_guru', [PublicDataGuruController::class, 'index'])->name('data-
 Route::get('data_guru/{id}', [PublicDataGuruController::class, 'show'])->name('data-guru.show');
 
 // Galeri (Public)
-Route::get('/galeri', [PublicGaleriController::class, 'index'])->name('galeri.index');
-Route::get('/galeri/{id}', [PublicGaleriController::class, 'show'])->name('galeri.show');
+Route::get('galeri', [PublicGaleriController::class, 'index'])->name('galeri.index');
+Route::get('galeri/{id}', [PublicGaleriController::class, 'show'])->name('galeri.show');
 
-// Rute untuk mengirim pesan (public)
-Route::post('/contact/send-messages', [MessageController::class, 'send'])->name('contact.send-messages');
+// Rute untuk halaman form kontak
+Route::get('/contact', function () {return view('home.contact');})->name('contact');
 
 //Admin
 Route::group(['namespace' => 'Admin','prefix' => 'admin','middleware' => ['auth']],function(){
@@ -66,6 +65,7 @@ Route::group(['namespace' => 'Admin','prefix' => 'admin','middleware' => ['auth'
 		Route::get('/',[AdminController::class,'index'])->name('index');
 		Route::get('/profile',[ProfileController::class,'index'])->name('profile.index');
 		Route::get('/change-password',[ChangePasswordController::class,'index'])->name('change-password.index');
+
 
 		//Resource Controller
 		Route::resource('users','UsersController');

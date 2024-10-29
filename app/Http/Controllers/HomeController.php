@@ -14,12 +14,12 @@ class HomeController extends Controller
 {
     public function index()
     {
-    	return view('home.index',[
+        return view('home.index', [
             'agenda' => Agenda::latest()->take(2)->get(),
-            'artikel' => Artikel::with(['user','kategoriArtikel'])->latest()->take(2)->get(),
+            'artikel' => Artikel::with(['user', 'kategoriArtikel'])->latest()->take(2)->get(),
             'pengumuman' => Pengumuman::with(['user'])->latest()->take(2)->get(),
             'data_guru' => DataGuru::with(['user'])->latest()->take(2)->get(),
-            'galeri' => Galeri::with(['user'])->latest()->take(2)->get(),
+            'galeri' => Galeri::latest()->take(2)->get(), // Hapus with(['user'])
         ]);
     }
 

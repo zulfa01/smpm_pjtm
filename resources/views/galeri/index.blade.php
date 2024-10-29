@@ -1,28 +1,40 @@
 @extends('layouts.frontend.app', [
-    'title' => 'Galeri',
+    'title' => 'List Galeri',
 ])
 
 @section('content')
-<div class="container mt-5">
-    <h2 class="mb-4">Galeri</h2>
-    
-    <div class="row">
-        @foreach($galeri as $item)
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    <img src="{{ $item->getFotoUrl() }}" alt="{{ $item->judul }}" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $item->judul }}</h5>
-                        <p class="card-text">{{ Str::limit($item->deskripsi, 100) }}</p>
-                        <a href="{{ route('galeri.show', $item->id) }}" class="btn btn-primary">Lihat Detail</a>
+@if($galeri->count() > 0)
+<section class="upcoming-events section-padding-100-0 mb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <div class="section-heading mb-5">
+                    <h3 class="text-primary">Galeri</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            @foreach($galeri as $item)
+            <div class="col-12 col-md-6 col-lg-4 mb-4">
+                <div class="single-upcoming-events wow fadeInUp" data-wow-delay="250ms" style="border: 1px solid #eaeaea; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                    <div class="events-thumb">
+                        <img src="{{ asset('uploads/galeri/' . $item->foto) }}" alt="{{ $item->judul }}" style="width: 100%; height: 200px; object-fit: cover;">
+                    </div>
+                    <div class="p-3 text-center">
+                        <h4 class="event-title text-truncate" style="font-weight: bold;">{{ $item->judul }}</h4>
                     </div>
                 </div>
             </div>
-        @endforeach
+            @endforeach
+        </div>
+
+        <div class="pagination justify-content-center">
+            {{ $galeri->links() }}
+        </div>
     </div>
-    
-    <div class="pagination">
-        {{ $galeri->links() }} <!-- Memanggil links() dari objek paginator -->
-    </div>
-</div>
+</section>
+@else
+<div class="alert alert-warning text-center">Data tidak ditemukan.</div>
+@endif
 @stop
